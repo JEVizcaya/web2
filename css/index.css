@@ -1,0 +1,44 @@
+* {
+    border: 1px solid black;
+}
+
+header {
+    height: 100px;
+    justify-content: center;
+    display: flex;
+
+}
+
+nav {
+    height: 50px;
+}
+
+section {
+    height: 500px;
+}
+
+footer {
+    height: 100px;
+}
+/*query para pantallas pequeñas copilot
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+}*/
+
+
+nav ul {
+    display: flex;
+    justify-content: end;
+
+}
+
+nav ul li {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
