@@ -1,3 +1,4 @@
+
 *{
     border: 1px solid black;
 }
@@ -9,10 +10,28 @@ header {
     justify-content: space-between;
 
 }
-.imguser{
+.imgUser{
     height: 100%;
     border-radius: 50%;
+    
+    
 }
-#info{
-    display: none;
+
+.menuUser{
+    display:none;
+}
+
+header>div{
+    display: flex;
+    width: 160px;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .menuUser li{
+        margin-top: 20px;
+    }
 }
