@@ -8,3 +8,14 @@ user.onclick=function(){
     }
 
 }
+
+var menuMovil=document.getElementById("menuMovil");
+menuMovil.onclick=function(){
+    if(menu.style.display=="block"){
+        menu.style.dispaly="none";
+    }else{
+        menu.style.display="block";
+    }
+    
+}
+    

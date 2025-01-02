@@ -29,9 +29,75 @@ header>div{
 
 }
 
+aside {
+    width: 30%;
+}
+
+.asideMovil {
+    display: none;
+
+}
+
+.contenedorPrincipal {
+    width: 70%;
+}
+main {
+    display: flex;
+    height: 80vh;
+}
+
+aside li {
+    font-size: 40px;
+    margin-top: 20px;
+} 
+
+aside ul {
+    list-style: none;
+}
+
+aside i {
+    margin-right: 20px;
+    width: 30px;
+}
+
+footer {
+    margin: 0px;
+}
+
+
+
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     .menuUser li{
         margin-top: 20px;
+    }
+    aside {
+        display: none;
+    }
+    .contenedorPrincipal {
+        width: 100%;
+
+    }
+    .asideMovil {
+        display: block;
+    }
+    main {
+        flex-direction: column;
+    }
+    .asideMovil ul {
+        display: none;
+        list-style: none;
+        padding-left: 0;
+    }
+    .asideMovil i {
+        font-size: 30px;
+        margin: 10px;
+        margin-left: 20px;
+    }
+    .asideMovil ul li {
+        border-bottom: 2px dotted blue;
+    }
+    *{
+        border: none;
     }
 }
