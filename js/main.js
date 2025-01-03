@@ -18,4 +18,15 @@ menuMovil.onclick=function(){
     }
     
 }
+
     
+var papeleras=document.getElementsByClassName("fa-trash");
+for (let index = 0; index < papeleras.length; index++) {
+    const element = papeleras[index];
+    element.onclick=function(e){
+        e.target.parentElement.parentElement.remove();
+       // alert("borrando")
+    };
+
+    
+}
