@@ -44,6 +44,7 @@ aside {
 .contenedorPrincipal {
     width: 70%;
     padding-left: 20px;
+    overflow: auto;
 }
 main {
     display: flex;
@@ -88,6 +89,12 @@ table {
 }
 td i{
     margin-left: 10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
 }
 
 
