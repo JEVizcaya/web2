@@ -22,6 +22,7 @@
             <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
+    
     <section class="seccion1">
         <h3>Aprende HTML</h3>
         <p>HTML (Hypertext Markup Language) es un lenguaje de marcado utilizado para estructurar y presentar contenido en la web. Es el estándar básico para crear páginas web y definir su contenido, como texto, imágenes, enlaces y otros elementos multimedia. HTML no es un lenguaje de programación, sino un lenguaje de marcado, lo que significa que su función principal es organizar y describir el contenido de una página web.</p>
