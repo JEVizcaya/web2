@@ -24,7 +24,7 @@ if(! isset($_SESSION["usuario"])){
             <div id="menuUser" class="menuUser">
                 <ul id="info">
                     <li><a href="">Datos de usuario</a></li>
-                    <li><a href="index.php">Cerrar sesion</a></li>
+                    <li><a href="cerrar_sesion.php">Cerrar sesion</a></li>
                 </ul>
             </div>
         </div>
