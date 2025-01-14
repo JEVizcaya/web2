@@ -1,9 +1,25 @@
 <?php 
-if(isset($_GET["nombre"])){
-    var_dump($_GET);
-    var_dump($_POST);
-    exit();
+if(isset($_POST["nombre"])){
+    include("conexiondb.php");
+    try{ 
+        $sql = "INSERT INTO usuarios (nombre, apellidos, email, fecha, password) 
+                VALUES (:nombre, :apellidos, :email, :fecha, :password)";
+        $stmt = $conexion->prepare($sql);
+        $stmt->bindParam(':nombre', $_POST["nombre"]);
+        $stmt->bindParam(':apellidos', $_POST["apellidos"]);
+        $stmt->bindParam(':email', $_POST["email"]);
+        $stmt->bindParam(':fecha', $_POST["fecha"]);
+        // Encriptar la contraseña antes de guardarla
+        $hashed_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $stmt->bindParam(':password', $hashed_password);
+        $stmt->execute();
+        echo "Registro insertado exitosamente";
+        header("Location: login.php");
+    } catch (PDOException $e) {
+        echo "Conexión fallida: " . $e->getMessage();
+    }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +32,8 @@ if(isset($_GET["nombre"])){
    
 <body>
     <div>
-    <a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
-    <form class="register" action="procesar.php" method="post">
+    <a href="index.php"><img src="img/logo.svg" alt="Logo"></a>
+    <form class="register" action="" method="post">
     <label for="nombre">Nombre</label>
     <input required type="text" name="nombre" id="nombre">
     <label for="apellidos">Apellidos</label>
@@ -35,7 +51,7 @@ if(isset($_GET["nombre"])){
     
     
 </form>
-<p>*Si tienes usuario <a href="login.html">login</a></p>
+<p>*Si tienes usuario <a href="login.php">login</a></p>
 </div>
 <script src="js/registro.js"></script>
 </body>

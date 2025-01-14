@@ -18,7 +18,7 @@ $sql = "INSERT INTO usuarios (nombre, apellidos, email, fecha, password)
  VALUES ('".$_POST["nombre"]."', '".$_POST["apellidos"]."', '".$_POST["email"]."', '".$_POST["fecha"]."', '".$_POST["password"]."')";
 
 if (mysqli_query($conexion, $sql)) {
-    echo "Nuevo registro creado";
+    header("Location: login.html");
 } else {    
     echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
 }
@@ -27,4 +27,5 @@ if (mysqli_query($conexion, $sql)) {
 mysqli_close($conexion);
 
 
-?>
+?> 
+

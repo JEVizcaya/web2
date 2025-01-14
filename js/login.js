@@ -1,3 +1,5 @@
+
+/*
 var formulario=document.getElementById("formulario");
 
 formulario.onsubmit=function(e){
@@ -9,4 +11,5 @@ formulario.onsubmit=function(e){
     }else{
         alert('usuario o contraseña incorrectos');
     }
-}
+        
+} */
