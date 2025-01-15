@@ -32,6 +32,9 @@ for (let index = 0; index < papeleras.length; index++) {
 
     
 }
+
+
+
 /*para poner la fecha actual en el input de fecha
 document.getElementById("fecha").value=new Date().toISOString().substring(0,10);
 
