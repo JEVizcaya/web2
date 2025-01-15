@@ -3,6 +3,9 @@ session_start();
 if(! isset($_SESSION["usuario"])){
     header("Location: login.php");
 }
+include ("conexiondb.php");
+$sql = "SELECT * FROM incidencias";
+$result = $conexion->query($sql);
 
     
 ?>
@@ -53,11 +56,11 @@ if(! isset($_SESSION["usuario"])){
         <section class="contenedorPrincipal">
             <h3>Listado incidencias</h3>
             <div class="incidencias">
-                <form action="" id="formIncidencias">
+                <form action="nueva_incidencia.php" method="post" id="formIncidencias">
                     <label for="fecha">Fecha</label>
-                    <input type="date" name="" id="fecha" value="">
+                    <input type="date" name="fecha" id="fecha" value="">
                     <label for="descripcion">Descripcion</label>
-                    <input type="text" name="" id="descripcion" required>
+                    <input type="text" name="descripcion" id="descripcion" required>
                     <button>Enviar</button>
                 </form>
 
@@ -71,51 +74,24 @@ if(! isset($_SESSION["usuario"])){
                         <th>Operaciones</th>
                     </thead>
                     <tbody id="tbodyIncidencias">
-                        <tr>
-                            <td>1</td>
-                            <td>12/12/2021</td>
-                            <td>Problema con el servidor</td>
+                        <?php
+                        while($row=$result->fetch()){
+                            echo "<tr>
+                            <td>".$row['id']."</td>
+                            <td>".$row['fecha']."</td>
+                            <td>".$row['descripcion']."</td>
                             <td>
-                                <i class="fa-solid fa-trash"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
+                                <i class='fa-solid fa-trash'></i>
+                                <i class='fa-solid fa-pen-to-square'></i>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>12/12/2021</td>
-                            <td>Problema con el servidor</td>
-                            <td>
-                                <i class="fa-solid fa-trash"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>12/12/2021</td>
-                            <td>Problema con el servidor</td>
-                            <td>
-                                <i class="fa-solid fa-trash"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>12/12/2021</td>
-                            <td>Problema con el servidor</td>
-                            <td>
-                                <i class="fa-solid fa-trash"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>12/12/2021</td>
-                            <td>Problema con el servidor</td>
-                            <td>
-                                <i class="fa-solid fa-trash"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </td>
-                        </tr>
+                            
+                            </tr>";
+                            
+                        }
+                        ?>
+                        
+                    </tbody>    
+                        
                 </table>
             </div>
         </section>

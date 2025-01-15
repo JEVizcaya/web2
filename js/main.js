@@ -20,7 +20,7 @@ menuMovil.onclick=function(){
 }
 
     
-var papeleras=document.getElementsByClassName("fa-trash");
+//var papeleras=document.getElementsByClassName("fa-trash");
 for (let index = 0; index < papeleras.length; index++) {
     const element = papeleras[index];
     element.onclick=function(e){
@@ -32,7 +32,7 @@ for (let index = 0; index < papeleras.length; index++) {
 
     
 }
-//para poner la fecha actual en el input de fecha
+/*para poner la fecha actual en el input de fecha
 document.getElementById("fecha").value=new Date().toISOString().substring(0,10);
 
 var formulario=document.getElementById("formIncidencias");
@@ -82,4 +82,4 @@ function getNextId(idTabla) {
         }
     }
     return maxId + 1;
-}
+} */
